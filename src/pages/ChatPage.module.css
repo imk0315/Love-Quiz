@@ -1,0 +1,193 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(160deg, #FFE4F0 0%, #EDE9FF 100%);
+}
+
+/* ─── Header ─── */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 24px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(196, 181, 253, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.backBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-mid);
+  font-size: 18px;
+  font-family: inherit;
+  padding: 4px 8px;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s;
+}
+.backBtn:hover { background: rgba(236,72,153,.08); color: var(--pink-deep); }
+
+.partnerAvatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--btn-grad);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  box-shadow: 0 4px 12px rgba(236,72,153,.25);
+}
+
+.partnerInfo { flex: 1; }
+.pname { font-size: 16px; font-weight: 700; color: var(--text-dark); }
+.pstatus { font-size: 12px; color: #22C55E; }
+
+/* ─── Messages ─── */
+.messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 740px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.msgRow {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+  animation: pageIn .25s ease both;
+}
+
+.msgRow.me {
+  flex-direction: row-reverse;
+}
+
+.msgAv {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--grad);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+.msgBubble {
+  max-width: 65%;
+  padding: 12px 16px;
+  border-radius: 18px 18px 18px 4px;
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 14px;
+  line-height: 1.55;
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+  color: var(--text-dark);
+  word-break: break-word;
+}
+
+.msgBubble.meBubble {
+  background: var(--btn-grad);
+  color: white;
+  border-radius: 18px 18px 4px 18px;
+}
+
+.msgTime {
+  font-size: 11px;
+  color: #C4A8CF;
+  margin-top: 4px;
+  padding-left: 4px;
+}
+
+.msgTime.meTime {
+  text-align: right;
+  padding-right: 4px;
+  padding-left: 0;
+}
+
+/* Typing indicator */
+.typingBubble {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(255,255,255,.9);
+  border-radius: 18px 18px 18px 4px;
+  padding: 14px 18px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+}
+
+.typingBubble span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--lavender);
+  animation: bounce 1.2s ease infinite;
+}
+.typingBubble span:nth-child(2) { animation-delay: 0.2s; }
+.typingBubble span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes bounce {
+  0%, 80%, 100% { transform: translateY(0); opacity: .5; }
+  40%            { transform: translateY(-6px); opacity: 1; }
+}
+
+/* ─── Input ─── */
+.inputWrap {
+  background: rgba(255,255,255,.75);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(196, 181, 253, 0.2);
+}
+
+.inputRow {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 14px 20px;
+  max-width: 740px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.field {
+  flex: 1;
+  padding: 13px 18px;
+  border: 2px solid rgba(196, 181, 253, 0.35);
+  border-radius: 14px;
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--text-dark);
+  transition: border-color 0.2s;
+}
+.field:focus { border-color: var(--lavender); background: white; }
+
+.sendBtn {
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 14px;
+  background: var(--btn-grad);
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(236,72,153,.3);
+  transition: transform 0.15s, box-shadow 0.15s;
+  flex-shrink: 0;
+}
+.sendBtn:hover { transform: scale(1.05); box-shadow: 0 6px 18px rgba(236,72,153,.4); }

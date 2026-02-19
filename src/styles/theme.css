@@ -1,0 +1,140 @@
+/* ─── CSS Variables ─── */
+:root {
+  --rose: #F8B4D9;
+  --lavender: #C4B5FD;
+  --warm-white: #FFF5F7;
+  --pink-deep: #EC4899;
+  --purple-deep: #8B5CF6;
+  --text-dark: #4B2D5E;
+  --text-mid: #9D6FA0;
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --shadow: 0 8px 32px rgba(236, 72, 153, 0.12);
+  --grad: linear-gradient(135deg, #F8B4D9 0%, #C4B5FD 100%);
+  --btn-grad: linear-gradient(135deg, #EC4899 0%, #8B5CF6 100%);
+  --bg-grad: linear-gradient(160deg, #FFE4F0 0%, #EDE9FF 100%);
+}
+
+/* ─── Reset ─── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Noto Sans TC', -apple-system, sans-serif;
+  background: var(--bg-grad);
+  min-height: 100vh;
+  color: var(--text-dark);
+  overflow-x: hidden;
+}
+
+/* ─── Page transitions ─── */
+.page-enter {
+  animation: pageIn 0.4s ease both;
+}
+
+@keyframes pageIn {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Shared: Buttons ─── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background: var(--btn-grad);
+  color: white;
+  border: none;
+  border-radius: 14px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+  box-shadow: 0 6px 18px rgba(236, 72, 153, 0.35);
+  text-decoration: none;
+}
+.btn-primary:hover  { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(236,72,153,0.45); }
+.btn-primary:active { transform: translateY(0); }
+.btn-primary.full   { width: 100%; }
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border: 2px solid rgba(236,72,153,.4);
+  border-radius: 14px;
+  background: transparent;
+  color: var(--pink-deep);
+  font-size: 15px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+.btn-outline:hover { border-color: var(--pink-deep); background: rgba(236,72,153,.05); }
+
+.btn-sm {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 20px;
+  background: var(--btn-grad);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+  box-shadow: 0 4px 12px rgba(236,72,153,0.3);
+}
+.btn-sm:hover { transform: translateY(-1px); }
+
+/* ─── Shared: Cards ─── */
+.card {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+}
+
+/* ─── Shared: Input ─── */
+.input-field {
+  width: 100%;
+  padding: 14px 18px;
+  border: 2px solid rgba(196,181,253,.4);
+  border-radius: 14px;
+  font-size: 15px;
+  font-family: inherit;
+  background: rgba(255,255,255,.7);
+  color: var(--text-dark);
+  outline: none;
+  transition: border 0.2s, background 0.2s;
+}
+.input-field::placeholder { color: #C4A8CF; }
+.input-field:focus { border-color: var(--lavender); background: white; }
+
+/* ─── Shared: Section Title ─── */
+.section-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-mid);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(196,181,253,.4); border-radius: 99px; }

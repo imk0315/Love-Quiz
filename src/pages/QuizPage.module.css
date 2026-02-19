@@ -1,0 +1,138 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(160deg, #FFE4F0 0%, #EDE9FF 100%);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 28px;
+}
+
+.backBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-mid);
+  font-size: 14px;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s;
+}
+.backBtn:hover { color: var(--pink-deep); }
+
+.quizLabel {
+  font-size: 14px;
+  color: var(--pink-deep);
+  font-weight: 600;
+}
+
+.body {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px 48px;
+}
+
+.card {
+  width: 100%;
+  max-width: 560px;
+  padding: 38px 42px;
+}
+
+/* Progress */
+.progressWrap { margin-bottom: 28px; }
+
+.progressLabel {
+  font-size: 13px;
+  color: var(--text-mid);
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.progressBar {
+  height: 6px;
+  background: rgba(196, 181, 253, 0.25);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: var(--btn-grad);
+  border-radius: 99px;
+  transition: width 0.45s ease;
+}
+
+/* Question */
+.questionText {
+  font-size: 19px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 28px;
+  line-height: 1.55;
+  color: var(--text-dark);
+}
+
+/* Options */
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.optionBtn {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  border: 2px solid rgba(196, 181, 253, 0.35);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 15px;
+  color: var(--text-dark);
+  text-align: left;
+  transition: border-color 0.2s, background 0.2s, transform 0.15s;
+}
+.optionBtn:hover {
+  border-color: var(--lavender);
+  background: rgba(196, 181, 253, 0.08);
+  transform: translateX(3px);
+}
+.optionBtn.selected {
+  border-color: var(--pink-deep);
+  background: linear-gradient(135deg, rgba(236,72,153,.07), rgba(139,92,246,.07));
+}
+
+.optionLetter {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(196, 181, 253, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  flex-shrink: 0;
+  transition: background 0.2s, color 0.2s;
+  color: var(--text-dark);
+}
+.optionBtn.selected .optionLetter {
+  background: var(--btn-grad);
+  color: white;
+}
+
+/* Next */
+.nextWrap {
+  text-align: center;
+  margin-top: 26px;
+}
