@@ -4,8 +4,8 @@ import { getDatabase } from "firebase/database";
 const firebaseConfig = {
   apiKey: "AIzaSyDPNzlN9Lq1wXSXvpvKeQhBN1QZs1nDu8E",
   authDomain: "love-quiz-fd802.firebaseapp.com",
-  databaseURL:
-    "https://love-quiz-fd802-default-rtdb.asia-southeast1.firebasedatabase.app",
+  databaseURL: "https://love-quiz-fd802-default-rtdb.asia-
+  southeast1.firebasedatabase.app",
   projectId: "love-quiz-fd802",
   storageBucket: "love-quiz-fd802.appspot.com",
   messagingSenderId: "163599587575",
