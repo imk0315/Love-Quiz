@@ -9,7 +9,7 @@ const firebaseConfig = {
  databaseURL: "https://love-quiz-fd802-default-rtdb.asia-southeast1.firebasedatabase.app",
   projectId: "love-quiz-fd802",
   storageBucket: "love-quiz-fd802.firebasestorage.app",
-  messagingSenderId: "G-DDHZPQYD4F"
+  messagingSenderId: ""163599587575",
   appId: "1:163599587575:web:dd9e7b78b9639690299bf2",
 };
 
