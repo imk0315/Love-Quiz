@@ -8,7 +8,8 @@ const firebaseConfig = {
 
   authDomain: "love-quiz-fd802.firebaseapp.com",
 
-  databaseURL: "https://love-quiz-fd802-default-rtdb.asia-southeast1.firebasedatabase.app",
+  databaseURL: "https://love-quiz-fd802-default-rtdb.asia-
+  southeast1.firebasedatabase.app",
 
   projectId: "love-quiz-fd802",
 
