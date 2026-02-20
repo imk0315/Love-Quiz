@@ -14,11 +14,10 @@ function formatTime(ts) {
 
 export default function Lobby() {
   const { nickname, setQuizIndex } = useApp()
-  const navigate  = useNavigate()
+  const navigate = useNavigate()
   const [input, setInput] = useState('')
   const chatBottomRef = useRef(null)
 
-  // 接入 Firebase 聊天室（roomId = 'lobby'，所有人共用）
   const { messages, onlineCount, send } = useChat('lobby', nickname)
 
   useEffect(() => {
@@ -43,7 +42,8 @@ export default function Lobby() {
       </header>
 
       <div className={styles.body}>
-        {/* ── 測驗卡片區 ── */}
+
+        {/* 測驗卡片區 */}
         <section className={styles.quizSection}>
           <div className="section-title">✦ 選擇測驗</div>
           <div className={styles.quizGrid}>
@@ -60,9 +60,10 @@ export default function Lobby() {
           </div>
         </section>
 
-        {/* ── 右側面板 ── */}
+        {/* 右側聊天室 */}
         <aside className={styles.aside}>
           <div className={`${styles.chatPanel} card`}>
+
             <div className={styles.chatHeader}>
               <span>💬 聊天大廳</span>
               <span className={styles.onlineCount}>
@@ -79,7 +80,9 @@ export default function Lobby() {
                 return (
                   <div key={m.id} className={`${styles.chatMsg} ${isMe ? styles.chatMsgMe : ''}`}>
                     {!isMe && (
-                      <div className={styles.chatAvatar}>{m.nickname?.[0]?.toUpperCase() ?? '?'}</div>
+                      <div className={styles.chatAvatar}>
+                        {m.nickname?.[0]?.toUpperCase() ?? '?'}
+                      </div>
                     )}
                     <div className={styles.chatBubbleWrap}>
                       {!isMe && <div className={styles.chatName}>{m.nickname}</div>}
@@ -112,10 +115,10 @@ export default function Lobby() {
               />
               <button className={styles.sendBtn} onClick={handleSend}>➤</button>
             </div>
+
           </div>
-
-
         </aside>
+
       </div>
     </div>
   )
