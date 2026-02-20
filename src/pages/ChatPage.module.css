@@ -117,7 +117,20 @@
   padding-left: 0;
 }
 
-/* Typing indicator */
+.emptyHint {
+  color: var(--text-mid);
+  font-size: 13px;
+  text-align: center;
+  padding: 40px 20px;
+  line-height: 1.6;
+}
+
+.msgName {
+  font-size: 11px;
+  color: var(--text-mid);
+  margin-bottom: 3px;
+  padding-left: 4px;
+}
 .typingBubble {
   display: flex;
   align-items: center;

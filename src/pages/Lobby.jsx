@@ -5,12 +5,6 @@ import { QUIZ_DATA } from '../data/questions.js'
 import { useChat } from '../lib/useChat.js'
 import styles from './Lobby.module.css'
 
-// ── 最新測驗結果（之後可接 Firebase） ──
-const RECENT = [
-  { user: '0.0',       type: '成熟穩重・成長派',    avatar: '0' },
-  { user: 'jen_y0923', type: '快樂規劃・積極分享者', avatar: 'J' },
-]
-
 function formatTime(ts) {
   if (!ts) return ''
   const d = new Date(ts)
@@ -120,18 +114,7 @@ export default function Lobby() {
             </div>
           </div>
 
-          <div className={`${styles.recentPanel} card`}>
-            <div className="section-title" style={{ marginBottom: 10 }}>🏆 最新測驗結果</div>
-            {RECENT.map((r, i) => (
-              <div key={i} className={styles.resultItem}>
-                <div className={styles.resultAvatar}>{r.avatar}</div>
-                <div className={styles.resultInfo}>
-                  <div className={styles.rname}>{r.user}</div>
-                  <div className={styles.rtype}>✦ {r.type}</div>
-                </div>
-              </div>
-            ))}
-          </div>
+
         </aside>
       </div>
     </div>
